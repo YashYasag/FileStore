@@ -8,6 +8,12 @@ from pyrogram.enums import ChatMemberStatus
 from config import FORCE_SUB_CHANNEL, FORCE_SUB_CHANNEL2, ADMINS
 from pyrogram.errors.exceptions.bad_request_400 import UserNotParticipant
 from pyrogram.errors import FloodWait
+from pyrogram.errors import FloodWait
+from shortzy import Shortzy
+import requests
+import time
+from datetime import datetime
+from database.database import user_data, db_verify_status, db_update_verify_status
 
 async def is_subscribed(filter, client, update):
     if not FORCE_SUB_CHANNEL:
